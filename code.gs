@@ -1,5 +1,8 @@
 /* Code written by @nn1k1kvn 
    https://github.com/nn1k1kvn/DriveGo2ImgGallery
+   Language: Google Apps Script
+   v 0.1 
+   2016
 */
 
 var folderName  = "test";
