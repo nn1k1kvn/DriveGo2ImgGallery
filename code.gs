@@ -1,9 +1,9 @@
 /* Code written by @nn1k1kvn 
    https://github.com/nn1k1kvn/DriveGo2ImgGallery
-   Language: Google Apps Script
-   v 0.1 
-   2016
 */
+
+
+
 
 var folderName  = "test";
 
@@ -14,7 +14,7 @@ var listfiles = {
 
 
 listFilesInFolder(folderName);
-doGet(listfiles);
+// doGet(listfiles);
  
 
 function listFilesInFolder(folderName) {
@@ -28,11 +28,24 @@ function listFilesInFolder(folderName) {
    var files = folder.searchFiles('mimeType contains "image/"'); 
    while (files.hasNext()) {
      var file = files.next();
-    // Logger.log(file.getName());
-     listfiles.files.push({
-       "fileName" : file.getName(),
-       "fileUrl" : file.getUrl(),
-       "fileId" : file.getId()
+      
+      // A short-lived link to the file's thumbnail. 
+      // To use the function, you’ll need to enable the Drive API from the Google Developers Console for your Apps Script project.
+      // var thumbnailLink = Drive.Files.get(file.getId()).thumbnailLink;    
+     
+       
+
+
+      listfiles.files.push({
+      //  "fileName" : file.getName(),
+      // "fileUrl" : file.getUrl(),
+      // "thumbnailLink" :  thumbnailLink,
+       
+        "fileId" : file.getId(),
+         
+        
+      
+       
      });
     }
  }
@@ -72,5 +85,4 @@ function doGet(request) {
         }
         
         */
- 
  
